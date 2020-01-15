@@ -1,0 +1,38 @@
+﻿<Window x:Class="AplicacionMVVC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AplicacionMVVC"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.New"
+                        Executed="ModificarCommand_Executed"
+                        CanExecute="ModificarCommand_CanExecuted">
+            
+        </CommandBinding>
+    </Window.CommandBindings>
+    <Grid>
+        <StackPanel Name="modificar_StackPanel" Orientation="Vertical">
+            <ComboBox x:Name="modificar_Combobox">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding id}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <TextBlock x:Name="identificadorModificar_TextBlock" Text="Identificador"/>
+            <TextBox x:Name="identificadorModificar_TextBox" Margin="0,0,0,5"/>
+            <TextBlock x:Name="nombreModificar_TextBlock" Text="Nombre"/>
+            <TextBox x:Name="nombreModificar_TextBox" Margin="0,0,0,5"/>
+            <TextBlock x:Name="ApellidoModificar_TextBlock" Text="Apellido"/>
+            <TextBox x:Name="apellidoModificar_TextBox" Margin="0,0,0,5"/>
+
+            <Button Name="insertarModificar_Button" Content="Insertar" Width="100" 
+                    HorizontalAlignment="Left" Margin="0,5,0,0" Command="ApplicationCommands.New"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
